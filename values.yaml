@@ -6,13 +6,16 @@
 replicaCount: 1
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
 image:
-  repository: public.ecr.aws/n0r9r0t3/oshi-no-sain/frontend:latest
+  repository: 522814704939.dkr.ecr.ap-northeast-1.amazonaws.com/oshi-no-sain/frontend
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "20250301012312"
+  tag: ""
+
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
-imagePullSecrets: []
+imagePullSecrets: [
+  "ecr-secret"
+]
 # This is to override the chart name.
 nameOverride: ""
 fullnameOverride: ""
